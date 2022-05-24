@@ -28,7 +28,7 @@ class DaKa(object):
         self.info = None
         self.sess = requests.Session()
     
-    def randomString(length):
+    def randomString(self,length):
         '''
         获取随机字符串
         :param length:随机字符串长度
@@ -39,7 +39,7 @@ class DaKa(object):
             ret_string += random.choice(aes_chars)
         return ret_string
     
-    def getAesString(data, key, iv):
+    def getAesString(self,data, key, iv):
         '''
         用AES-CBC方式加密字符串
         :param data: 需要加密的字符串
@@ -65,7 +65,7 @@ class DaKa(object):
 
     def login(self):
         '''
-        做任何操作前都要先登录以获得cookie
+        get cookie
         '''
         url1 = self.base_url
         response1 = self.sess.get(url1)
