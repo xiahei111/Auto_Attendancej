@@ -91,7 +91,7 @@ class DaKa(object):
         """Get hitcard info, which is the old info with updated new time."""
         if not html:
             urllib3.disable_warnings()
-            res = self.sess.get(self.base_url, headers=self.header, verify=False)
+            res = self.sess.get(self.base_url, verify=False)
             html = res.content.decode()
 
         jsontext = re.findall(r'def = {[\s\S]*?};', html)[0]
