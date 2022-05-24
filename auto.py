@@ -68,7 +68,7 @@ class DaKa(object):
         做任何操作前都要先登录以获得cookie
         '''
         url1 = self.base_url
-        response1 = self.client.get(url1)
+        response1 = self.sess.get(url1)
 
         soup = BeautifulSoup(response1.text, 'html.parser')
         salt = soup.find('input', id="pwdEncryptSalt")['value']
@@ -85,7 +85,7 @@ class DaKa(object):
             'lt': '',
             'execution': execution
         }
-        response2 = self.client.post(url2, data=data2)
+        response2 = self.sess.post(url2, data=data2)
 
     def get_info(self, html=None):
         """Get hitcard info, which is the old info with updated new time."""
@@ -119,7 +119,7 @@ class DaKa(object):
 
     def post(self):
         """Post the hitcard info"""
-        res = self.client.post(self.save_url, data=self.info)
+        res = self.sess.post(self.save_url, data=self.info)
         return json.loads(res.text)
 
 
