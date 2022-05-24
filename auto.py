@@ -131,13 +131,13 @@ def main(username, password):
     dk = DaKa(username, password)
     spinner.succeed('已新建打卡实例')
 
-    spinner.start(text='登录到中南大学信息门户...')
+    print("登录到中南大学信息门户...")
     dk.login()
-    spinner.succeed('已登录到中南大学信息门户')
+    print("已登录到中南大学信息门户")
 
-    spinner.start(text='正在获取个人信息...')
+    print("正在获取个人信息...")
     dk.get_info()
-    spinner.succeed('%s %s同学, 你好~' % (dk.info['number'], dk.info['name']))
+    print("同学您好~")
 
     spinner.start(text='正在为您打卡打卡打卡')
     res = dk.post()
