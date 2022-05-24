@@ -77,7 +77,7 @@ class DaKa(object):
         url2 = urllib.parse.unquote(response1.url)
         data2 = {
             'username': self.username,
-            'password': getAesString(randomString(64)+self.password, salt, randomString(16)),
+            'password': self.getAesString(self.randomString(64)+self.password, salt, self.randomString(16)),
             'captcha': '',
             '_eventId': 'submit',
             'cllt': 'userNameLogin',
