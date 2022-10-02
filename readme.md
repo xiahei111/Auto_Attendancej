@@ -47,7 +47,7 @@
     打开Actions页面，此时在workflows中应该出现了正在运行的工作流。当提交文件时会马上进行一次打卡，以后将会默认在每天的7:05进行打卡
 
     ![](https://raw.githubusercontent.com/lxy764139720/Figurebed/master/img/20200817192416.png)
-
+ 
 ## 修改打卡时间2
 
 打开项目中的/.github/workflows/python-package.yml文件，修改corn中的值，注意使用UTC零区时间。
